@@ -3,7 +3,7 @@ let apellido = prompt("Ingrese su Apellido");
 console.log("Welcome " + nombre + " " + apellido + " to this page");
 let fecha = prompt("Ingrese el año actual");
 let nacimiento = prompt("Ingrese su año de Nacimiento");
-let edad = fecha - nacimieto;
+let edad = fecha - nacimiento;
 let verificacion = confirm("¿Seguro queres continuar?");
 console.log("Tenes " + edad + " años");
 if (edad >= 20 && verificacion) {
