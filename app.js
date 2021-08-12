@@ -1,16 +1,10 @@
 let passwordDefault = "july005";
-let password;
 let saldoDisponible = 2500;
-let monto;
-let operacion;
-
-let nombre = prompt("Ingrese su nombre");
-
-password = prompt("Ingrese contraseña");
 
 function mostrarSaldo() {
   alert(`Su saldo es $${saldoDisponible}`);
 }
+
 function transferencia(montoAtransferir) {
   saldoDisponible = saldoDisponible - montoAtransferir;
 }
@@ -19,14 +13,13 @@ function deposito(montoAdepositar) {
   saldoDisponible = saldoDisponible + montoAdepositar;
 }
 
-if (password == passwordDefault) {
-  alert(`Bienvenid/o ${nombre} su saldo es $${saldoDisponible}`);
-  operacion = Number(
+function mostrarOperaciones() {
+  let operacion = Number(
     prompt(
       "Si usted desea realizar una operacion, siga los siguiente pasos: 1 Si usted desea realizar una transferencia. 2 Si desea depositar "
     )
   );
-
+  let monto;
   switch (operacion) {
     case 1:
       alert("Usted desea transferir ");
@@ -44,6 +37,18 @@ if (password == passwordDefault) {
     default:
       alert("Usted no desea realizar una operacion hoy");
   }
-} else {
-  alert(`Contraseña incorrecta, comuniquese para reestablecer contraseña`);
 }
+
+function loginUsuario() {
+  let nombre = prompt("Ingrese su nombre");
+  let password = prompt("Ingrese contraseña");
+
+  if (password == passwordDefault) {
+    alert(`Bienvenid/o ${nombre} su saldo es $${saldoDisponible}`);
+    mostrarOperaciones();
+  } else {
+    alert(`Contraseña incorrecta, comuniquese para reestablecer contraseña`);
+  }
+}
+
+loginUsuarioMejorado();
