@@ -1,27 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+    />
+    <title>MI HOME BANKING</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
   </head>
+
   <body>
-    <header>
-      <h1>MI HOME BANKING</h1>
-      <h2>Binevenido/a</h2>
-    </header>
-    <nav>
-      <li>Tu Cuenta</li>
-      <li>Extraer dinero</li>
-      <li>Depositar dinero</li>
-      <li>Pagar Servicio</li>
-    </nav>
-    <section>
-      <h3>Tu Saldo en la cuenta es</h3>
-      <h3>$2500</h3>
-    </section>
-    <footer></footer>
+    <div class="header">
+      <img class="logo" src="" />
+      <div class="align-left">
+        <span id="nombre">Bienvenido/a</span>
+      </div>
+    </div>
+    <div class="white-container">
+      <div class="menu-container">
+        <h1 class="tu-cuenta">Tu cuenta</h1>
+        <button class="links">Extraer dinero</button>
+        <button class="links">Depositar dinero</button>
+        <button class="links">Pagar servicios</button>
+        <button class="links">Transferir dinero</button>
+        <button class="links">Cambiar límite de extracción</button>
+      </div>
+      <div class="green-container">
+        <div class="cuenta-info">
+          <p>Saldo en tu cuenta</p>
+          <h3 id="saldo-cuenta">$ 2500</h3>
+          <p id="limite-extraccion">Tu límite de extracción es:1000</p>
+        </div>
+      </div>
+    </div>
 
     <script src="./usuarios.js"></script>
     <script src="./app.js"></script>

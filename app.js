@@ -39,16 +39,4 @@ function mostrarOperaciones() {
   }
 }
 
-function loginUsuario() {
-  let nombre = prompt("Ingrese su nombre");
-  let password = prompt("Ingrese contraseña");
-
-  if (password == passwordDefault) {
-    alert(`Bienvenid/o ${nombre} su saldo es $${saldoDisponible}`);
-    mostrarOperaciones();
-  } else {
-    alert(`Contraseña incorrecta, comuniquese para reestablecer contraseña`);
-  }
-}
-
-loginUsuarioMejorado();
+loginUsuario();
