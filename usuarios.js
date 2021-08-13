@@ -11,6 +11,9 @@ class Usuario {
 
 let usuarios = [];
 usuarios.push(new Usuario("Nahuel Balsamo", "33863147", "nahuel"));
+usuarios.push(new Usuario("Julia Puyo", "33625424", "julia"));
+usuarios.push(new Usuario("Ruth Puyo", "xx-xxx-xxx", "ruth"));
+usuarios.push(new Usuario("Sofia Puyo", "xx-xxx-xxx", "sofia"));
 
 function buscarUsuario(dniIngresado, claveIngresada) {
   let usuarioEncontrado;
