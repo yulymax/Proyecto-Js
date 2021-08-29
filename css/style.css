@@ -1,4 +1,11 @@
+/* Formulario de contacto*/
 body {
+  margin: 0;
+}
+
+#miGranCaja {
+  display: flex;
+  flex-direction: column;
   background: radial-gradient(
     circle,
     rgba(140, 136, 138, 0.773547) 0%,
@@ -6,6 +13,79 @@ body {
   );
 }
 
+#miEncabezado {
+  font-family: "Texturina", serif;
+  color: #1261a1;
+  background-image: url(../Imgen/encabezado.jpg);
+  background-size: cover;
+  border: 1px solid white;
+  height: 250px;
+}
+
+a {
+  font-weight: bold;
+  font-size: 40px;
+}
+form {
+  width: 400px;
+  padding: 20px;
+  border: 3px solid #020a36;
+  border-radius: 10px;
+  margin: auto;
+  background-color: rgb(253, 253, 253);
+  margin-top: 50px;
+  height: 550px;
+}
+
+form label {
+  font-weight: bold;
+  padding-right: 20px;
+
+  display: inline-block;
+}
+
+form input[type="dni"],
+form input[type="password"] {
+  padding-right: 80px;
+  border: 1px solid #f6f6f6;
+  border-radius: 3px;
+  background-color: #f6f6f6;
+  margin: 8px 0;
+  display: inline-block;
+}
+
+form input[type="submit"],
+form input[type="reset"] {
+  width: 100%;
+  padding: 8px 16px;
+  margin-top: 32px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  display: block;
+  color: #fff;
+  background-color: #000;
+}
+
+form input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+.formulario {
+  margin-bottom: 50px;
+  font-family: "Texturina", serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+.leyenda {
+  font-family: "Texturina", serif;
+  line-height: 2;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Movimientos*/
 .header {
   display: flex;
   width: 65%;
@@ -25,13 +105,15 @@ body {
 }
 
 .white-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
   display: flex;
   width: 65%;
   padding: 30px;
   margin: 0 auto;
   box-sizing: border-box;
-  border: 1px solid #979797;
-  border-radius: 8px;
+  border: 3px solid #020a36;
+  border-radius: 10px;
   background-color: #fff;
   justify-content: center;
 }
@@ -49,7 +131,7 @@ body {
   font-size: 32px;
   font-weight: normal;
   color: #2a333d;
-  border-left: 6px solid #b52cc1;
+  border-left: 6px solid #2b48ec;
 }
 .links {
   position: relative;
@@ -66,9 +148,10 @@ body {
 .links:hover {
   margin-left: 10px;
 
-  color: #9e2cc1;
+  color: #5da2f1;
 }
 .green-container {
+  padding-top: 30px;
   display: flex;
   width: 65%;
   box-sizing: border-box;
@@ -77,7 +160,7 @@ body {
 
   color: white;
   border-radius: 8px;
-  background-color: #922cc1;
+  background-color: #2c2ec1;
 }
 .cuenta-info {
   display: block;
