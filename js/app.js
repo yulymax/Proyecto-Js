@@ -1,7 +1,8 @@
 let saldoDisponible = 2500;
 //Aplique Dom aca
 function mostrarSaldo(saldo) {
-  alert(`Su saldo es $${saldo}`);
+  Swal.fire(`Su saldo es $${saldo}`);
+
   let saldoCuentaDom = document.getElementById("saldo-cuenta");
   saldoCuentaDom.innerHTML = saldo;
 }
@@ -9,20 +10,38 @@ function mostrarSaldo(saldo) {
 function transferir(montoAtransferir) {
   saldoDisponible = saldoDisponible - montoAtransferir;
 }
+
 function transferirDinero() {
-  let monto = Number(prompt("Ingrese el monto que desea extraer"));
-  transferir(monto);
-  mostrarSaldo(saldoDisponible);
+  Swal.fire({
+    text: "Cuanto desea transferir?",
+    input: "number",
+  }).then(function (result) {
+    if (result.value) {
+      let monto = Number(result.value);
+      transferir(monto);
+      mostrarSaldo(saldoDisponible);
+      Swal.fire("Has transferido $" + monto);
+    }
+  });
 }
 
 //Funcion Deposito:
 function deposito(montoAdepositar) {
   saldoDisponible = saldoDisponible + montoAdepositar;
 }
+
 function depositarDinero() {
-  let monto = Number(prompt("Ingrese el monto que desea depositar"));
-  deposito(monto);
-  mostrarSaldo(saldoDisponible);
+  Swal.fire({
+    text: "Cuanto desea depositar?",
+    input: "number",
+  }).then(function (result) {
+    if (result.value) {
+      let monto = Number(result.value);
+      deposito(monto);
+      mostrarSaldo(saldoDisponible);
+      Swal.fire("Has depositado $" + monto);
+    }
+  });
 }
 
 //Definicion de mis usuarios
@@ -58,7 +77,7 @@ function loginUsuario(dni, clave) {
   if (usuarioEncontrado) {
     mostrarSaldo(saldoDisponible);
   } else {
-    alert(`Usuario o Contraseña incorrecta`);
+    Swal.fire("Usuario o contrseña incorrecta");
   }
 }
 //Funcion carga de usuario
@@ -96,9 +115,16 @@ const registrar = (e) => {
     usuarios.push(new Usuario(dni, clave));
     let datoParseado = JSON.stringify(usuarios);
     localStorage.setItem("usuarios", datoParseado);
-    alert("Usuario registrado con exito");
+
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Usuario registrado con exito",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   } else {
-    alert("Ingrese un DNI y clave para registrarse");
+    Swal.fire("Ingrese un DNI y clave para registrarse");
   }
 };
 
@@ -112,5 +138,3 @@ let btntransferir = document.getElementById("transferirDinero");
 btntransferir.onclick = () => {
   transferirDinero();
 };
-
-/**************************LOCAL STORAGE*****************************************/
