@@ -4,7 +4,7 @@ function mostrarSaldo(saldo) {
   Swal.fire(`Su saldo es $${saldo}`);
 
   let saldoCuentaDom = document.getElementById("saldo-cuenta");
-  saldoCuentaDom.innerHTML = saldo;
+  saldoCuentaDom.innerHTML = `$${saldo}`;
 }
 //Funcion Transferir:
 function transferir(montoAtransferir) {
@@ -75,6 +75,8 @@ function buscarUsuario(dniIngresado, claveIngresada) {
 function loginUsuario(dni, clave) {
   let usuarioEncontrado = buscarUsuario(dni, clave);
   if (usuarioEncontrado) {
+    $(".home-banking").show();
+    $(".formulario").hide();
     mostrarSaldo(saldoDisponible);
   } else {
     Swal.fire("Usuario o contrseña incorrecta");
@@ -137,4 +139,19 @@ btndeposito.onclick = () => {
 let btntransferir = document.getElementById("transferirDinero");
 btntransferir.onclick = () => {
   transferirDinero();
+};
+/***********************************/
+function precioDolar() {
+  const url = "https://www.dolarsi.com/api/api.php?type=valoresprincipales";
+  $.get(url, (respuesta, estado) => {
+    if (estado === "success") {
+      let cambio = respuesta[0].casa;
+      let valorDolar = `El precio del dolar oficial es $${cambio.compra} para la compra y $${cambio.venta} para la venta`;
+      Swal.fire(valorDolar);
+    }
+  });
+}
+let btndolar = document.getElementById("precioDolar");
+btndolar.onclick = () => {
+  precioDolar();
 };
