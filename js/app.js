@@ -1,8 +1,6 @@
 let saldoDisponible = 2500;
 //Aplique Dom aca
 function mostrarSaldo(saldo) {
-  Swal.fire(`Su saldo es $${saldo}`);
-
   let saldoCuentaDom = document.getElementById("saldo-cuenta");
   saldoCuentaDom.innerHTML = `$${saldo}`;
 }
@@ -75,8 +73,9 @@ function buscarUsuario(dniIngresado, claveIngresada) {
 function loginUsuario(dni, clave) {
   let usuarioEncontrado = buscarUsuario(dni, clave);
   if (usuarioEncontrado) {
-    $(".home-banking").show();
-    $(".formulario").hide();
+    $(".formulario").fadeOut(2000, () => {
+      $(".home-banking").fadeIn(2000);
+    });
     mostrarSaldo(saldoDisponible);
   } else {
     Swal.fire("Usuario o contrseña incorrecta");
